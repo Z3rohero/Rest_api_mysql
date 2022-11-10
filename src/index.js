@@ -1,20 +1,18 @@
 import express from "express";
-import { conne } from './db/connect.js';
-import {router}from './routes/employes.js'
-import{index} from  './routes/index.routes.js'
+import { employeRoute } from './routes/employes'
+import { indexRoutes } from './routes/index.routes.js'
 
 const app = express();
-
-
-app.use (employes);
-app.use (index);
-app.listen(process.env.PORT||3000);
-
-
-
+//Todas las rutas se va procesa con la funcion de express.json antes de llegar 
+app.use(express.json())
+app.use('/api',indexRoutes);
+app.use(employeRoute);
+app.listen(process.env.PORT || 3000);
 
 
 
 
 
-//app.routes ("/", (rest, ))
+
+
+

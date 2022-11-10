@@ -1,19 +1,13 @@
 import {Router} from 'express'
-import {Getemployes} from '../controller/controlle.js'
+import {Getemployes, createEmployee,updateEmployee,deleteEmployee} from '../controller/controlle.js'
 const router = Router()
 
-router.get('/', Getemployes)
+router.get('/employees', Getemployes)
 
-router.post('/', (req, res) =>
-  res.send("hello word serve")
-);
+router.post('/employees', createEmployee  )
 
-router.put('/', (req, res) =>
-  res.send("hello word serve")
-);
+router.put('/employees',  updateEmployee)
 
-router.delete('/', (req, res) =>
-  res.send("hello word serve")
-);
+router.delete('/employees',deleteEmployee  )
 
-export default router
+export default employeRoute

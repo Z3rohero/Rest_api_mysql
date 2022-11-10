@@ -8,3 +8,11 @@ create table employes (
   salary int (5) default null,
   primary key (id)
 )ENGINE =InnoDB;
+
+insert  employee values (1, 'zero', 1000),
+(2, 'joe', 1000),
+(3, 'henry', 2000),
+(4, ' sam', 3000),
+
+
+

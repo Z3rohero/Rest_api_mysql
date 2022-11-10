@@ -5,14 +5,6 @@ const host = process.env['host']
 const pass = process.env['pass']
 const usuario = process.env['usuario']
 
-/*
-Recordatorio colocar user no username
-2. colocar otro parametro ssl:{
-  ssl:{
-    rejectUnauthorized:false
-}
-*/
-
 export const conne = createPool({
   database: db,
   user: usuario,
@@ -22,5 +14,8 @@ export const conne = createPool({
     rejectUnauthorized:false
   }
 });
+
+
+
 
 

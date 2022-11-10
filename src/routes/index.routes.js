@@ -1,11 +1,9 @@
 import {Router} from 'express'
+import {ping} from '../controller/index.controller'
 
 const router  = Router()
 
-router.get('/ping', async (req, res) => {
-  const [result] = await conne.query('select 1 + 1 as result')
-  res.json(result)
-});
+router.get('/ping', ping);
 
 
-export default  router 
+export default  indexRoutes
