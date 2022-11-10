@@ -1,30 +1,15 @@
 import express from "express";
 import { conne } from './db/connect.js';
+import {router}from './routes/employes.js'
+import{index} from  './routes/index.routes.js'
+
 const app = express();
 
-app.listen(3000);
 
-app.get('/ping', async (req, res) => {
-  const [result] = await conne.query('select 1 + 1 as result')
-  res.json(result)
+app.use (employes);
+app.use (index);
+app.listen(process.env.PORT||3000);
 
-});
-
-app.get('/', (req, res) =>
-  res.send("hello word serve")
-);
-
-app.post('/', (req, res) =>
-  res.send("hello word serve")
-);
-
-app.put('/', (req, res) =>
-  res.send("hello word serve")
-);
-
-app.delete('/', (req, res) =>
-  res.send("hello word serve")
-);
 
 
 
