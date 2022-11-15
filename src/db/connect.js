@@ -1,15 +1,18 @@
 import { createPool } from 'mysql2/promise'
 
-const db = process.env['database']
-const host = process.env['host']
-const pass = process.env['pass']
-const usuario = process.env['usuario']
+import {
+  DB_HOST,
+  DB_PORT,
+  DB_DATABASE,
+  DB_USER,
+  DB_PASSWORD
+} from '../config.js'
 
 export const conne = createPool({
-  database: db,
-  user: usuario,
-  host: host,
-  password: pass,
+  database:DB_DATABASE ,
+  user:DB_USER ,
+  host: DB_HOST,
+  password: DB_PASSWORD,
   ssl:{
     rejectUnauthorized:false
   }
